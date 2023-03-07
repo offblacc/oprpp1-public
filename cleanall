@@ -1,0 +1,10 @@
+#!/bin/bash
+hw_dirs=$(find . -maxdepth 1 -type d -name "hw*")
+for dir in $hw_dirs; do
+  echo "Running mvn clean in $dir"
+  cd $dir
+  mvn clean
+  cd ..
+  echo ""
+done
+
